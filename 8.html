@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="play()">Chơi</button>
+<script>
+    function play() {
+        let turnLeft = 3;
+        let range = prompt("Hãy chọn ra khoảng bạn muốn đoán");
+        let luckyNumber = Math.floor(Math.random() * (+range - 1 + 1) ) + 0;
+        while (turnLeft > 0) {
+            let yourChoice = prompt("Con số bạn đưa ra là");
+            yourChoice = +yourChoice;
+            if (yourChoice == luckyNumber) {
+                alert("Congratulations! Bạn tuyệt vời, bạn 10 điểm.");
+                return;
+            } else {
+                turnLeft--;
+                alert("You're wrong! Lưu ý rằng bạn chỉ còn " + turnLeft + " cơ hội nữa");
+            }
+        }
+        alert("Game Over! Con số may mắn là: " + luckyNumber);
+    }
+</script>
+</body>
+</html>
